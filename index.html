@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Մայայի Ծննդյան և Սուրբ Մկրտության Արարողությունը</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Georgia", serif;
+      background-color: #f9f6f2;
+      color: #3a2d2d;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .card {
+      max-width: 650px;
+      margin: 60px auto;
+      padding: 40px 30px 35px 30px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e9e2dc;
+      position: relative;
+      z-index: 1;
+      overflow: visible;
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      margin-top: 0;
+      color: #e7a9bb; /* Նուրբ վարդագույն */
+      font-family: "Georgia", serif;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .countdown {
+      font-size: 18px;
+      font-weight: bold;
+      color: #e7a9bb;
+      margin-bottom: 16px;
+      margin-top: -2px;
+      background: #f9f6f2;
+      border-radius: 10px;
+      padding: 6px 0 2px 0;
+      transition: color 0.2s;
+    }
+    .symbol {
+      margin: 16px 0 28px 0;
+    }
+    .symbol svg {
+      width: 36px;
+      height: 36px;
+      vertical-align: middle;
+      margin: 0 14px;
+      opacity: 0.92;
+      transition: 0.2s;
+    }
+    .symbol .candle {
+      fill: #e3b2b2;
+      filter: drop-shadow(0px 2px 2px #fae5e2);
+    }
+    .symbol .cross {
+      fill: #e7a9bb;
+      filter: drop-shadow(0px 2px 2px #f3e3e8);
+    }
+    .symbol .dove {
+      filter: drop-shadow(0px 1px 2px #e2e9f5);
+    }
+    .section {
+      margin-bottom: 28px;
+    }
+    .label {
+      font-weight: bold;
+      font-size: 16px;
+      color: #b68898;
+      margin-bottom: 7px;
+    }
+    .location {
+      font-size: 16px;
+      margin-top: 5px;
+      color: #bf8fa4;
+    }
+    .church-details, .restaurant-details {
+      font-size: 15.5px;
+      color: #d7a4b9;
+      margin-top: 6px;
+      margin-bottom: -3px;
+    }
+    .footer {
+      font-style: italic;
+      font-size: 16px;
+      color: #bb8b9d;
+      margin-top: 30px;
+      line-height: 1.6;
+    }
+    /* Սրտիկների դիզայն - տարբեր չափեր */
+    .heart {
+      position: absolute;
+      background: #e7a9bb;
+      transform: rotate(-45deg);
+      animation: pulse 2.5s infinite ease-in-out;
+      opacity: 0.42;
+      z-index: 2;
+      box-shadow: 0 2px 6px #f4d8df;
+      transition: background 0.18s;
+      /* Default size, will be overridden */
+      width: 23px;
+      height: 23px;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      background: #e7a9bb;
+      border-radius: 50%;
+    }
+    .heart.big {
+      width: 30px;
+      height: 30px;
+    }
+    .heart.big::before,
+    .heart.big::after {
+      width: 30px;
+      height: 30px;
+    }
+    .heart.medium {
+      width: 23px;
+      height: 23px;
+    }
+    .heart.medium::before,
+    .heart.medium::after {
+      width: 23px;
+      height: 23px;
+    }
+    .heart.small {
+      width: 15px;
+      height: 15px;
+    }
+    .heart.small::before,
+    .heart.small::after {
+      width: 15px;
+      height: 15px;
+    }
+    .heart::before {
+      top: -50%;
+      left: 0;
+    }
+    .heart::after {
+      left: 50%;
+      top: 0;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1) rotate(-45deg); opacity: 0.39; }
+      50% { transform: scale(1.22) rotate(-45deg); opacity: 0.7; }
+    }
+    /* Սրտիկների նոր դասավորություն */
+    .card .heart.h1 { top: 10px; left: 25px; }
+    .card .heart.h2 { top: 12px; right: 37px; }
+    .card .heart.h3 { top: 130px; left: 18px; }
+    .card .heart.h4 { top: 85px; right: 62px; }
+    .card .heart.h5 { bottom: 32px; left: 34px; }
+    .card .heart.h6 { bottom: 38px; right: 25px; }
+    .card .heart.h7 { top: 46%; left: 49%; transform: translate(-50%, -50%) rotate(-45deg);}
+    .card .heart.h8 { bottom: 100px; right: 20px; }
+    .card .heart.h9 { bottom: 70px; left: 85px; }
+    .card .heart.h10 { top: 190px; right: 50px; }
+    @media (max-width: 600px) {
+      .card {max-width: 99vw;}
+      .calendar-box {padding: 13px 9vw;}
+      .card .heart.h1 {left: 10vw;}
+      .card .heart.h2 {right: 8vw;}
+      .card .heart.h3 {left: 3vw;}
+      .card .heart.h4 {right: 10vw;}
+      .card .heart.h5 {left: 7vw;}
+      .card .heart.h6 {right: 3vw;}
+      .card .heart.h7 {left: 44vw;}
+      .card .heart.h8 {right: 5vw;}
+      .card .heart.h9 {left: 12vw;}
+      .card .heart.h10 {right: 18vw;}
+    }
+    .calendar-box {
+      display: inline-block;
+      background: linear-gradient(120deg, #fbeff3 70%, #f7f4ea 100%);
+      border-radius: 10px;
+      padding: 13px 24px 14px 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px #f1e7ed88;
+      margin-top: 10px;
+    }
+    .calendar-day {
+      font-size: 2.2em;
+      color: #e7a9bb;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 2px;
+    }
+    .calendar-month {
+      font-size: 1.1em;
+      color: #e7a9bb;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .calendar-year {
+      font-size: 1em;
+      color: #e7a9bb;
+      letter-spacing: 1px;
+      margin-top: -6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Սրտիկներ՝ տարբեր չափերով և նոր դասավորությամբ -->
+    <div class="heart big h1"></div>
+    <div class="heart medium h2"></div>
+    <div class="heart small h3"></div>
+    <div class="heart small h4"></div>
+    <div class="heart medium h5"></div>
+    <div class="heart small h6"></div>
+    <div class="heart big h7"></div>
+    <div class="heart small h8"></div>
+    <div class="heart medium h9"></div>
+    <div class="heart small h10"></div>
+
+    <h1>Մայայի Ծննդյան և Սուրբ Մկրտության Արարողությունը</h1>
+    <div class="countdown" id="countdown">Հետհաշվարկը հաշվվում է...</div>
+    <div class="calendar-box">
+      <div class="calendar-day">26</div>
+      <div class="calendar-month">Հունիս</div>
+      <div class="calendar-year">2025</div>
+    </div>
+    <div class="symbol">
+      <!-- Խաչ -->
+      <svg class="cross" viewBox="0 0 24 24" title="Խաչ">
+        <path d="M13 2h-2v5H6v2h5v13h2V9h5V7h-5z"/>
+      </svg>
+      <!-- Նուրբ մոմ -->
+      <svg class="candle" viewBox="0 0 32 32" title="Մոմ">
+        <g>
+          <rect x="14" y="10" width="4" height="15" rx="1.5" fill="#e3b2b2"/>
+          <ellipse cx="16" cy="9" rx="1.2" ry="2" fill="#fbead7"/>
+          <ellipse cx="16" cy="7.7" rx="0.55" ry="0.7" fill="#efcba6"/>
+        </g>
+      </svg>
+      <!-- Սպիտակ աղավնի՝ սմայլիկ տեսքով -->
+      <svg class="dove" viewBox="0 0 40 40" title="Աղավնի">
+        <g>
+          <path d="M36 30c-2.5-8.3-9.5-8.5-13-8.5 0 0 3-4.5 1-8s-6-2-8 1-1 8.5 8 12.5c0 0-6.5 0-10.5-4.5 0 0-2 4.5 3 7.5s10.5 2 11.5 2c0 0 7.5 0.5 8.5-2zm-20.5-18a2 2 0 114 0 2 2 0 01-4 0z"
+            fill="#fff" stroke="#e7a9bb" stroke-width="1.2"/>
+          <ellipse cx="15.5" cy="13" rx="0.7" ry="1.2" fill="#e7a9bb"/>
+          <ellipse cx="37" cy="29" rx="0.8" ry="0.5" fill="#e7a9bb"/>
+          <ellipse cx="23" cy="34.5" rx="1.2" ry="0.3" fill="#f3d3e2"/>
+        </g>
+      </svg>
+    </div>
+    <div class="section">
+      <div class="label">Մկրտություն՝</div>
+      <div class="location">Սուրբ Հռիփսիմե եկեղեցի</div>
+      <div class="church-details">ք. Էջմիածին &nbsp;|&nbsp; 15:00</div>
+    </div>
+    <div class="section">
+      <div class="label">Ռեստորան՝</div>
+      <div class="location">«Մորենա»</div>
+      <div class="restaurant-details">ք. Մասիս &nbsp;|&nbsp; 18:00</div>
+    </div>
+    <div class="footer">
+      Սիրով հրավիրում ենք Ձեզ՝ ներկա գտնվելու<br>
+      մեր դստեր՝ Մայայի առաջին տարեդարձին և սուրբ մկրտությանը,<br>
+      կիսելու մեզ հետ այս օրվա ուրախությունն ու օրհնությունը։
+    </div>
+  </div>
+  <script>
+    const countdown = document.getElementById("countdown");
+    const eventDate = new Date("2025-06-26T15:00:00+04:00");
+    function updateCountdown() {
+      const now = new Date();
+      const diff = eventDate - now;
+      if (diff <= 0) {
+        countdown.textContent = "Օրն արդեն եկել է՝ սիրով սպասում ենք Ձեզ։";
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      countdown.textContent = `Մնացել է՝ ${days} օր, ${hours} ժ, ${minutes} ր, ${seconds} վ`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
